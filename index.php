@@ -11,7 +11,10 @@ echo $text;
 echo "<br>";
 echo "Lunghezza testo " . strlen($text);
 echo "<br>";
-if(stripos($text, $search) !== false) {
+
+if($search === null) {
+    return;
+} else if(stripos($text, $search) !== false) {
     $text = str_ireplace($search, "***", $text);
 }
 
